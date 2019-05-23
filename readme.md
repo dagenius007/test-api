@@ -85,5 +85,12 @@ If all is set then we are ready to test :smile: :thumbsup:
   Parameter & Example Request :  ----
 
 
+## Testing 
+Sqlite database was used for testing .
 
+run `php artisan migrate --database=sqlite` to setup up the database
+
+run `comoposer test` to perform test 
+
+Test file can be found in test/Unit/BookTest.php
 
