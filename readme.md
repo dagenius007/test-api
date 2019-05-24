@@ -6,10 +6,10 @@ A test api performing CRUD operations with laravel(php) framework.
 
 ## Requirements
 
-    *[Laravel](https://laravel.com/docs/5.8/installation)
-    *MAMP or XAMP
-    *[Postman(to test APIs)](https://www.getpostman.com/)
-    *[Vscode](https://code.visualstudio.com/) or any editor of your choice
+    * [Laravel](https://laravel.com/docs/5.8/installation)
+    * MAMP or XAMP
+    * [Postman(to test APIs)](https://www.getpostman.com/)
+    * [Vscode](https://code.visualstudio.com/) or any editor of your choice
 
 ## Quick start 
 
@@ -24,11 +24,11 @@ Create a clone of `.env.example` file and rename to it to `.env`
 Create a database in your phpMyAdmin (you must have setup MAMP or XAMP on your pc)
 
 configure `.env` file 
- > DB_HOST=127.0.0.1
- > DB_PORT=3306 or 8889(if you are running on MAMP)
- > DB_DATABASE=your-database
- > DB_USERNAME=your-phpmyadmin-username
- > DB_PASSWORD=your-phpmyadmin-password
+ > DB_HOST=127.0.0.1<br>
+ > DB_PORT=3306 or 8889(if you are running on MAMP)<br>
+ > DB_DATABASE=your-database<br>
+ > DB_USERNAME=your-phpmyadmin-username<br>
+ > DB_PASSWORD=your-phpmyadmin-password<br>
 
 Navigate to your root folder of your project in your terminal and run `php artisan migrate` to migrate the database
 
@@ -43,14 +43,18 @@ If all is set then we are ready to test :smile: :thumbsup:
 
 ### Fetch Books from External Api(Ice AND Fire API)
   HTTP Method : `GET`
+
   Route :  `http://localhost:8000/api/external-books?name=:query`
+  
   Parameter : { "name" : query }
 
 
 ### Create New Book
   HTTP Method : `POST`
+
   Route :  `http://localhost:8000/api/v1/books`
-  Parameter & Example Request : {
+
+  Parameter & Example Request : ```{
                                     "name": "My first book Book",
                                     "isbn": "123-3213243567",
                                     "authors": ["John Doe" , "Alli"],
@@ -58,30 +62,44 @@ If all is set then we are ready to test :smile: :thumbsup:
                                     "publisher": "Acme Books",
                                     "country": "Nigeria",
                                     "release_date": "2019-01-21"
-                                }
+                                }```
+
+
 ### Get all books
   HTTP Method : `POST`
+
   Route :  `http://localhost:8000/api/v1/books`
+
   Parameter & Example Request : ---
 
 ### Update Book
   HTTP Method : `PATCH`
+
   Route :  `http://localhost:8000/api/v1/books/:id`
-  Parameter & Example Request : {
+
+  Parameter & Example Request : ```{
                                     "name": "My Last Book",
                                     "isbn": "123-3213245655",
                                     "authors": ["Josh" , "Boy"],
                                     "number_of_pages": 450
-                                }
+                                }```
+
+
 
 ### Delete Book
   HTTP Method : `DELETE`
+
   Route :  `http://localhost:8000/api/v1/books/:id`
+
   Parameter & Example Request :  ----
+
+
 
 ### Get Book
   HTTP Method : `GET`
+
   Route :  `http://localhost:8000/api/v1/books/:id`
+  
   Parameter & Example Request :  ----
 
 
