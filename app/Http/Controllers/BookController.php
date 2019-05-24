@@ -93,11 +93,11 @@ class BookController extends Controller
             // Create Author
             $newAuthor = Author::insert($data);
             if($newAuthor){
-                return response()->json(["status_code"=> 201,"status"=>"success","data"=> [$request]] , 201);
+                return response()->json(["status_code"=> 201,"status"=>"success","data"=> [$request]]);
             }
         }
 
-        return response()->json(["status_code"=> 500,"status"=>"false","data"=> []] , 500);
+        return response()->json(["status_code"=> 500,"status"=>"false","data"=> []] );
     }
 
 
@@ -125,7 +125,7 @@ class BookController extends Controller
             $book['authors'] = $this->fetchAuthors($book);
 
         }
-        return response()->json(["status_code"=> 200,"status"=>"success","data"=> $books] , 200);
+        return response()->json(["status_code"=> 200,"status"=>"success","data"=> $books]);
     }
 
     // Update a book :id
@@ -133,7 +133,7 @@ class BookController extends Controller
         $book = Book::find($id);
 
         if(!$book){
-            return response()->json(["status_code"=> 404,"status"=>"false","data"=> []] , 404);
+            return response()->json(["status_code"=> 404,"status"=>"false","data"=> []] );
         }
 
         $fields = $request->all();
@@ -160,7 +160,7 @@ class BookController extends Controller
 
         if($bookUpdate){
             $book['authors'] = $this->fetchAuthors($book);
-            return response()->json(["status_code"=> 200,"status"=>"success","data"=> $book],200);
+            return response()->json(["status_code"=> 200,"status"=>"success","data"=> $book]);
         }
 
         return response()->json(["status_code"=> 500,"status"=>"false","data"=> []]);
@@ -172,7 +172,7 @@ class BookController extends Controller
         $book = Book::find($id);
 
         if(!$book){
-            return response()->json(["status_code"=> 404,"status"=>"false","data"=> []],404);
+            return response()->json(["status_code"=> 404,"status"=>"false","data"=> []]);
         }
         $name = $book->name;
 
@@ -180,17 +180,17 @@ class BookController extends Controller
         $authorDelete = $book->authors()->delete();
 
         if($delete || $authorDelete){
-            return response()->json(["status_code"=> 204,"status"=>"success","message" => "The book ". $name ." was deleted successfully","data"=> []],204);
+            return response()->json(["status_code"=> 204,"status"=>"success","message" => "The book ". $name ." was deleted successfully","data"=> []]);
         }
     }
 
     public function view($id){
         $book = Book::find($id);
         if(!$book){
-            return response()->json(["status_code"=> 404,"status"=>"false","data"=> []],404);
+            return response()->json(["status_code"=> 404,"status"=>"false","data"=> []]);
         }
 
         $book['authors'] = $this->fetchAuthors($book);
-        return response()->json(["status_code"=> 200,"status"=>"success","data"=> $book],200);
+        return response()->json(["status_code"=> 200,"status"=>"success","data"=> $book]);
     }
 }

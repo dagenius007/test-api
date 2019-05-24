@@ -17,9 +17,9 @@ Ensure requirements are meet before you clone or download the project.
 
 Use `git clone https://github.com/dagenius007/test-api.git` to clone the project or you can download the project
 
-After clone the project run `composer update` to install all packages
+After cloning the project run `composer update` to install all packages
 
-Create a clone of `.env.example` file and rename to it to `.env`
+Create a clone of `.env.example` file and rename it to `.env`
 
 Create a database in your phpMyAdmin (you must have setup MAMP or XAMP on your pc)
 
@@ -30,7 +30,7 @@ configure `.env` file
  > DB_USERNAME=your-phpmyadmin-username<br>
  > DB_PASSWORD=your-phpmyadmin-password<br>
 
-Navigate to your root folder of your project in your terminal and run `php artisan migrate` to migrate the database
+Navigate to your root folder of your project, in your terminal: run `php artisan migrate` to migrate the database
 
 start your application by running `php artisan serve`.
 

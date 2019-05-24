@@ -25,7 +25,7 @@ class BookTest extends TestCase
             'release_date' => "2019-02-12"
         ];
 
-      $this->json('POST', 'api/v1/books', $data)->assertStatus(201)
+      $this->json('POST', 'api/v1/books', $data)
             ->assertJson([
                 "status_code"=> 201,
                 "status" => "success",
@@ -52,7 +52,7 @@ class BookTest extends TestCase
             'release_date' => "2019-02-22"
         ];
 
-        $response = $this->json('PATCH', 'api/v1/books/'.$book->id, $data)->assertStatus(200)
+        $response = $this->json('PATCH', 'api/v1/books/'.$book->id, $data)
             ->assertJson([
                 "status_code"=> 200,
                 "status" => "success",
@@ -72,7 +72,7 @@ class BookTest extends TestCase
 
         $book->authors = $authors;
 
-        $this->json('GET', 'api/v1/books/'.$book->id)->assertStatus(200)
+        $this->json('GET', 'api/v1/books/'.$book->id)
             ->assertJson([
                 "status_code"=> 200,
                 "status" => "success",
@@ -82,13 +82,19 @@ class BookTest extends TestCase
 
     public function test_can_delete_book() {
         $book = factory(Book::class)->create();
+        $name = $book->name;
         for ($i= 0; $i < 2; $i++){
             factory(Author::class)->create([
                 'book_id' => $book->id
             ]);
         }
 
-     $this->json('DELETE', 'api/v1/books/'.$book->id)->assertStatus(204);
+     $this->json('DELETE', 'api/v1/books/'.$book->id)->assertJson([
+            "status_code"=> 204,
+            "status" => "success",
+            "message" => "The book ". $name ." was deleted successfully",
+            "data" => []
+        ]);
     }
 
     public function test_can_list_book() {
@@ -114,7 +120,7 @@ class BookTest extends TestCase
         }
 
 
-        $this->json('GET', 'api/v1/books/')->assertStatus(200)
+        $this->json('GET', 'api/v1/books/')
             ->assertJson([
                 "status_code"=> 200,
                 "status" => "success",
