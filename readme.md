@@ -6,10 +6,10 @@ A test api performing CRUD operations with laravel(php) framework.
 
 ## Requirements
 
-    * [Laravel](https://laravel.com/docs/5.8/installation)
-    * MAMP or XAMP
-    * [Postman(to test APIs)](https://www.getpostman.com/)
-    * [Vscode](https://code.visualstudio.com/) or any editor of your choice
+* Laravel - https://laravel.com/docs/5.8/installation
+* MAMP or XAMP
+* Postman(to test APIs) - https://www.getpostman.com/
+* Vscode - https://code.visualstudio.com/ or any editor of your choice
 
 ## Quick start 
 
@@ -99,7 +99,7 @@ If all is set then we are ready to test :smile: :thumbsup:
   HTTP Method : `GET`
 
   Route :  `http://localhost:8000/api/v1/books/:id`
-  
+
   Parameter & Example Request :  ----
 
 
