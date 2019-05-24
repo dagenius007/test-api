@@ -15,11 +15,13 @@ A test api performing CRUD operations with laravel(php) framework.
 
 Ensure requirements are meet before you clone or download the project.
 
-Use `git clone https://github.com/dagenius007/test-api.git` to clone the project or you can download the project
+Use `git clone https://github.com/dagenius007/test-api.git` to clone the project
 
-After cloning the project run `composer update` to install all packages
+Navigate to your root folder of your project, in your terminal: run `composer update` to install all packages
 
 Create a clone of `.env.example` file and rename it to `.env`
+
+run `php artisan key:generate` to generate the application key
 
 Create a database in your phpMyAdmin (you must have setup MAMP or XAMP on your pc)
 
@@ -30,7 +32,7 @@ configure `.env` file
  > DB_USERNAME=your-phpmyadmin-username<br>
  > DB_PASSWORD=your-phpmyadmin-password<br>
 
-Navigate to your root folder of your project, in your terminal: run `php artisan migrate` to migrate the database
+In your terminal: run `php artisan migrate` to migrate the database
 
 start your application by running `php artisan serve`.
 
@@ -105,6 +107,8 @@ If all is set then we are ready to test :smile: :thumbsup:
 
 ## Testing 
 Sqlite database was used for testing .
+
+Install PhpUnit -- https://phpunit.de/getting-started/phpunit-7.html.
 
 run `php artisan migrate --database=sqlite` to setup up the database
 
